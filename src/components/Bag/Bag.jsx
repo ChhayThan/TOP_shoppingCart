@@ -1,4 +1,4 @@
-import styles from "./Bag.modules.css";
+import styles from "./Bag.module.css";
 
 function Bag() {
   return <h1>Bag</h1>;

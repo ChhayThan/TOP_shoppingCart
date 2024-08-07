@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import styles from "./StoreItem.modules.css";
+import styles from "./StoreItem.module.css";
 function StoreItem() {
   const { item } = useParams();
 

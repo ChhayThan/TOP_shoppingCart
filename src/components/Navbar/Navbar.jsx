@@ -1,16 +1,23 @@
 import { Link, useParams } from "react-router-dom";
-import styles from "./Navbar.modules.css";
+import styles from "./Navbar.module.css";
 
-function Navbar({ className }) {
+function Navbar() {
   return (
-    <div className={`${className} navbar`}>
+    <div className={styles.Navbar}>
       <div className="title">
-        <Link to="home" className="title">
+        <Link to="home" className={styles.Title}>
           Eric's
         </Link>
       </div>
       <Link to="home">Home</Link>
       <Link to="store">Store</Link>
+
+      <input
+        type="text"
+        className="searchBar"
+        id="searchBar"
+        placeholder="Search"
+      />
       <Link to="bag">Bag</Link>
     </div>
   );

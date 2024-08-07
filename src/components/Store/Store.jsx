@@ -1,3 +1,5 @@
+import styles from "./Store.module.css";
+
 function Store() {
   return <h1>Store</h1>;
 }

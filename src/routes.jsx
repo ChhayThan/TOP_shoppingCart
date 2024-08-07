@@ -1,9 +1,9 @@
 import App from "./App";
 import ErrorPage from "./ErrorPage";
-import Store from "./components/Store";
-import Home from "./components/Home";
-import StoreItem from "./components/StoreItem";
-import Bag from "./components/Bag";
+import Store from "./components/Store/Store";
+import Home from "./components/Home/Home";
+import StoreItem from "./components/StoreItem/StoreItem";
+import Bag from "./components/Bag/Bag";
 
 const routes = [
   {
