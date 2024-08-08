@@ -14,15 +14,71 @@
   font-size: 2.3em;
 }
 
-.shopBtn {
-  padding: 1.2em;
+.shopLink {
+  padding: 1em;
   border-radius: 10px;
   border: 1px solid lightgray;
   background-color: white;
   font-weight: bold;
 }
-.shopBtn:hover {
+.shopLink:hover {
   background-color: lightgray;
   transition: background-color 0.3s ease;
   cursor: pointer;
+}
+
+.featuredItems {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: lightgray;
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  background-color: white;
+  padding: 0.5em;
+  max-width: 200px;
+
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px lightgrey;
+}
+
+.item:hover {
+  cursor: pointer;
+  border: 1px solid lightgray;
+}
+
+.item:active {
+  transform: translateY(2px);
+}
+.itemImg {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.itemTitle {
+  padding-top: 1em;
+  font-size: 0.8em;
+  font-weight: bold;
+  justify-self: end;
+}
+
+.footer {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  width: 100vw;
+  height: 10vh;
 }
