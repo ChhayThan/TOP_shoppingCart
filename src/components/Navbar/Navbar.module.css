@@ -42,6 +42,7 @@
   background-color: rgb(244, 244, 244);
   font-weight: bold;
   padding: 1em;
+  position: relative;
 
   padding-left: 3em;
 }
@@ -58,6 +59,24 @@
 
 .Icon {
   position: absolute;
+  z-index: 1;
   top: 2.5em;
   right: 16.4em;
+}
+@media screen and (max-width: 450px) {
+  .Navbar {
+    flex-direction: column;
+  }
+  .Icon {
+    display: none;
+  }
+  .searchBar {
+    padding-left: 1em;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .Title {
+    display: none;
+  }
 }

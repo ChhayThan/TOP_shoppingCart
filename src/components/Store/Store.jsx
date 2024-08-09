@@ -1,8 +1,16 @@
 import { useLocation } from "react-router-dom";
 import styles from "./Store.module.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function Store() {
+  const categories = [
+    "electronics",
+    "jewelery",
+    "men's clothing",
+    "women's clothing",
+  ];
+  const [filter, setFilter] = useState([]);
   const location = useLocation();
   const { data } = location.state;
   const navigate = useNavigate();
@@ -10,28 +18,64 @@ function Store() {
     navigate(`../store/${itemTitle}`, { state: { item } });
   }
   return (
-    <>
-      <h1>Store</h1>
-      <div className={styles.itemContainer}>
-        {data.map((object) => {
-          return (
-            <div
-              className={`${styles.item}`}
-              key={object.id}
-              onClick={() => handleItemClick(object, object.title)}
-            >
-              <img
-                src={object.image}
-                alt={object.title}
-                className={styles.itemImg}
-                width="200"
-              />
-              <p className={styles.itemTitle}>{object.title}</p>
-            </div>
-          );
-        })}
+    <div className={styles.storeContainer}>
+      <div className={styles.sideBar}>
+        <div className={styles.categoryContainer}>
+          <h1>Categories</h1>
+          <div className={styles.categories}>
+            {categories.map((category, index) => {
+              return (
+                <div
+                  className={`${category} ${styles.category} ${
+                    filter.includes(category) ? styles.active : null
+                  }`}
+                  key={index}
+                >
+                  <div
+                    className={styles.checkBox}
+                    onClick={() => {
+                      let newFilter;
+                      if (filter.includes(category)) {
+                        newFilter = filter.filter(
+                          (currentCat) => currentCat !== category
+                        );
+                      } else {
+                        newFilter = [...filter, category];
+                      }
+                      setFilter(newFilter);
+                    }}
+                  ></div>
+                  <span className={styles.categoryName}>{category}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
-    </>
+      <div className={styles.storeItems}>
+        <div className={styles.itemCount}>{`Items:`}</div>
+        <div className={styles.itemContainer}>
+          {data.map((object) => {
+            if (filter.length === 0 || filter.includes(object.category)) {
+              return (
+                <div
+                  className={`${styles.item}`}
+                  key={object.id}
+                  onClick={() => handleItemClick(object, object.title)}
+                >
+                  <img
+                    src={object.image}
+                    alt={object.title}
+                    className={styles.itemImg}
+                  />
+                  <p className={styles.itemTitle}>{object.title}</p>
+                </div>
+              );
+            }
+          })}
+        </div>
+      </div>
+    </div>
   );
 }
 

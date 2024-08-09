@@ -1,8 +1,25 @@
+.storeContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.storeItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.itemCount {
+  font-weight: bold;
+  font-size: 1em;
+}
+
 .itemContainer {
   display: flex;
   flex-direction: row;
   gap: 2em;
   flex-wrap: wrap;
+  margin-right: 1em;
 }
 
 .item {
@@ -40,4 +57,58 @@
   font-size: 0.5em;
   font-weight: bold;
   justify-self: end;
+}
+.categoryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em;
+}
+.categoryContainer h1 {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.checkBox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  align-self: center;
+  justify-self: center;
+  flex-shrink: 0;
+  transition: background-color 300ms ease;
+}
+
+.category {
+  display: flex;
+  gap: 2em;
+}
+
+.categoryName {
+  min-width: 130px;
+}
+
+.category.active .checkBox {
+  background-color: black;
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 620px) {
+  .storeContainer {
+    flex-direction: column;
+  }
+  .storeItems {
+    align-items: center;
+  }
+  .itemContainer {
+    justify-content: center;
+  }
 }

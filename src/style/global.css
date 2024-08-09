@@ -15,3 +15,17 @@ div.error {
   font-size: 2em;
   font-weight: bold;
 }
+
+div.errorPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+div.errorPage .errorLink {
+  text-decoration: underline;
+}
