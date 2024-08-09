@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://api.escuelajs.co/api/v1/products", {
+    fetch("https://fakestoreapi.com/products", {
       mode: "cors",
     })
       .then((response) => {
@@ -39,7 +39,7 @@ function App() {
   }
   return (
     <>
-      <Navbar />
+      <Navbar data={data} />
       <Outlet context={[data]} />
     </>
   );

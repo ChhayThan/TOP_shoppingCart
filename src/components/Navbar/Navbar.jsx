@@ -2,8 +2,9 @@ import { Link, useParams } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import Icon from "@mdi/react";
 import { mdiShoppingOutline, mdiMagnify } from "@mdi/js";
+import PropTypes from "prop-types";
 
-function Navbar() {
+function Navbar({ data }) {
   return (
     <div className={styles.Navbar}>
       <div className={styles.navbarLeft}>
@@ -14,7 +15,9 @@ function Navbar() {
           <Link to="home">Home</Link>
         </div>
         <div className={styles.navLink}>
-          <Link to="store">Store</Link>
+          <Link to="store" state={{ data }}>
+            Store
+          </Link>
         </div>
       </div>
       <div className={styles.navbarRight}>
@@ -39,3 +42,7 @@ function Navbar() {
 }
 
 export default Navbar;
+
+Navbar.propTypes = {
+  data: PropTypes.array.isRequired,
+};

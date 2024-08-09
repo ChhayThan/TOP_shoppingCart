@@ -1,9 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import styles from "./StoreItem.module.css";
-function StoreItem() {
-  const { item } = useParams();
 
-  return <h1>{item}</h1>;
+function StoreItem() {
+  const { itemTitle } = useParams();
+  let location = useLocation();
+  const { item } = location.state;
+  console.log(item);
+
+  return <h1>{itemTitle}</h1>;
 }
 
 export default StoreItem;
