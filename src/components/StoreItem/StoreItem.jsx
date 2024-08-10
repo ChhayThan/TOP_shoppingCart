@@ -8,6 +8,15 @@ import { mdiShoppingOutline } from "@mdi/js";
 
 import { useBag } from "../../BagContext"; // Import useBag
 
+function checkItemInBag(bag, itemID) {
+  for (let i = 0; i < bag.length; i++) {
+    if (bag[i].id === itemID) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function StoreItem() {
   let location = useLocation();
   const { data, item } = location.state;
@@ -68,6 +77,14 @@ function StoreItem() {
             <button
               className={styles.buyBtn}
               onClick={() => {
+                for (let i = 0; i < bag.length; i++) {
+                  if (bag[i].id === item.id) {
+                    bag[i].quantity += itemAmount;
+                    setBag([...bag]);
+                    navigate(`../bag`, { state: { data } });
+                    return;
+                  }
+                }
                 let currentItem = {
                   id: item.id,
                   title: item.title,
@@ -84,13 +101,34 @@ function StoreItem() {
             >
               Buy Now
             </button>
-            <button className={styles.cartBtn}>
+            <button
+              className={`${
+                checkItemInBag(bag, item.id)
+                  ? styles.disabledCartBtn
+                  : styles.cartBtn
+              }`}
+              disabled={checkItemInBag(bag, item.id)}
+              onClick={() => {
+                let currentItem = {
+                  id: item.id,
+                  title: item.title,
+                  image: item.image,
+                  category: item.category,
+                  quantity: itemAmount,
+                  price: item.price,
+                };
+                bag.push(currentItem);
+                setBag([...bag]);
+              }}
+            >
               <Icon
                 path={mdiShoppingOutline}
                 size={0.8}
                 className={styles.Icon}
               />
-              Add to Bag
+              {checkItemInBag(bag, item.id)
+                ? "Item is in cart."
+                : "Add to cart."}
             </button>
           </div>
         </div>

@@ -95,10 +95,15 @@ button .Icon {
   cursor: pointer;
 }
 
-.cartBtn {
+.cartBtn,
+.disabledCartBtn {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.disabledCartBtn {
+  cursor: disabled;
 }
 
 .cartBtn:hover {

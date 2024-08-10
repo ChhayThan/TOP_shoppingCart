@@ -33,31 +33,31 @@ function Bag() {
                   <h3 className={styles.itemPrice}>{`$ ${(
                     item.price * item.quantity
                   ).toFixed(2)}`}</h3>
-                </div>
-                <div className={styles.itemAmount}>
-                  <button
-                    className={styles.amountBtn}
-                    onClick={() => {
-                      if (bag[index].quantity > 1) {
-                        bag[index].quantity = bag[index].quantity - 1;
-                        setBag([...bag]);
-                      }
-                    }}
-                  >
-                    -
-                  </button>
-                  <p>{item.quantity}</p>
-                  <button
-                    className={styles.amountBtn}
-                    onClick={() => {
-                      if (bag[index].quantity < 100) {
-                        bag[index].quantity = bag[index].quantity + 1;
-                        setBag([...bag]);
-                      }
-                    }}
-                  >
-                    +
-                  </button>
+                  <div className={styles.itemAmount}>
+                    <button
+                      className={styles.amountBtn}
+                      onClick={() => {
+                        if (bag[index].quantity > 1) {
+                          bag[index].quantity = bag[index].quantity - 1;
+                          setBag([...bag]);
+                        }
+                      }}
+                    >
+                      -
+                    </button>
+                    <p>{item.quantity}</p>
+                    <button
+                      className={styles.amountBtn}
+                      onClick={() => {
+                        if (bag[index].quantity < 100) {
+                          bag[index].quantity = bag[index].quantity + 1;
+                          setBag([...bag]);
+                        }
+                      }}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
               </div>
             );
