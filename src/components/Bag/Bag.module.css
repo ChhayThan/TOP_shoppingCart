@@ -1,7 +1,32 @@
+.emptyCart {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 2em;
+  font-size: 1em;
+}
+.emptyCart a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .bagContainer {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  padding: 2em;
+}
+.bagContainer a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.bagContainer h1 {
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 .main {
@@ -26,11 +51,13 @@
 .item {
   display: flex;
   align-items: flex-start;
+  gap: 1em;
 }
 .itemInfo {
   padding: 1em;
   display: flex;
   flex-direction: column;
+  gap: 0.5em;
 }
 
 .itemTitle {
@@ -42,7 +69,9 @@
   font-size: 1em;
   color: gray;
 }
-
+.itemStock {
+  color: #3895ff;
+}
 .itemPrice {
   font-weight: bold;
   font-size: 1em;
@@ -62,7 +91,67 @@
   background-color: rgb(231, 231, 231);
   transition: background-color 300ms ease;
 }
+.removeBtn {
+  font-weight: bold;
+  background-color: white;
+  color: crimson;
+  padding: 0.5em;
+  padding-left: 0;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  max-width: 100px;
+  align-self: flex-start;
+}
+.removeBtn:hover {
+  color: rgb(153, 2, 32);
+  text-decoration: underline;
+  text-decoration-color: crimson;
+}
 
+.checkoutContainer {
+  padding: 2em;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.checkoutContainer h1 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.checkoutContainer h2 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.checkoutContainer .subtotal,
+.checkoutContainer .tax,
+.checkoutContainer .total {
+  display: flex;
+  justify-content: space-between;
+}
+.subtotal h2,
+.tax h2 {
+  font-weight: 500;
+  font-size: 1em;
+}
+.checkoutContainer hr {
+  min-width: 300px;
+  background-color: lightgrey;
+  border: none;
+  height: 2px;
+}
+
+.checkOutBtn {
+  padding: 1em;
+  font-size: 1em;
+  color: white;
+  background-color: #3895ff;
+  border: none;
+  border-radius: 10px;
+}
 @media screen and (max-width: 550px) {
 }
 

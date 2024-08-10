@@ -127,7 +127,7 @@ function StoreItem() {
                 className={styles.Icon}
               />
               {checkItemInBag(bag, item.id)
-                ? "Item is in cart."
+                ? "Item is already in the cart."
                 : "Add to cart."}
             </button>
           </div>
