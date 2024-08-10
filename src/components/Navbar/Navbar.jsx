@@ -4,11 +4,12 @@ import styles from "./Navbar.module.css";
 import Icon from "@mdi/react";
 import { mdiShoppingOutline, mdiMagnify } from "@mdi/js";
 import PropTypes from "prop-types";
-import { useState } from "react";
+
+import { useBag } from "../../BagContext"; // Import useBag
 
 function Navbar({ data }) {
   const navigate = useNavigate();
-  const [bag, setBag] = useState([]);
+  const { bag } = useBag(); // Access bag and setBag from context
   return (
     <div className={styles.Navbar}>
       <div className={styles.navbarLeft}>

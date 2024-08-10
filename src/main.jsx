@@ -5,10 +5,14 @@ import routes from "./routes";
 import "./style/reset.css";
 import "./style/global.css";
 
+import { BagProvider } from "./BagContext"; // Import BagProvider
+
 const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BagProvider>
+      <RouterProvider router={router} />
+    </BagProvider>
   </React.StrictMode>
 );

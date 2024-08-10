@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 import { Link, useOutletContext } from "react-router-dom";
@@ -9,7 +8,7 @@ function Home() {
 
   const navigate = useNavigate();
   function handleItemClick(item, itemTitle) {
-    navigate(`../store/${itemTitle}`, { state: { item } });
+    navigate(`../store/${itemTitle}`, { state: { data, item } });
   }
   return (
     <div className={styles.homeContainer}>

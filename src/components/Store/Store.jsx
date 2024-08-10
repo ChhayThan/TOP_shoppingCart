@@ -15,6 +15,7 @@ function Store() {
   const { data, searchFilter } = location.state;
   const navigate = useNavigate();
   function handleItemClick(item, itemTitle) {
+    itemTitle = itemTitle.replace(/\//g, ""); // Remove all '/' characters
     navigate(`../store/${itemTitle}`, { state: { data, item } });
   }
 

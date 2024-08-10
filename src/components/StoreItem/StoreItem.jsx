@@ -1,15 +1,21 @@
 import { useParams, useLocation, Link } from "react-router-dom";
 import styles from "./StoreItem.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Icon from "@mdi/react";
 import { mdiShoppingOutline } from "@mdi/js";
+
+import { useBag } from "../../BagContext"; // Import useBag
 
 function StoreItem() {
   let location = useLocation();
   const { data, item } = location.state;
   const [itemAmount, setItemAmount] = useState(1);
-  const [price, setPrice] = useState(data.price);
+  const [price, setPrice] = useState(0);
+  const { bag, setBag } = useBag(); // Access bag and setBag from context
+
+  const navigate = useNavigate();
 
   return (
     <div className={styles.storeItemContainer}>
@@ -59,7 +65,24 @@ function StoreItem() {
           </div>
           <p className={styles.itemDescription}>{item.description}</p>
           <div className={styles.actionBtns}>
-            <button className={styles.buyBtn}>Buy Now</button>
+            <button
+              className={styles.buyBtn}
+              onClick={() => {
+                let currentItem = {
+                  id: item.id,
+                  title: item.title,
+                  category: item.category,
+                  quantity: itemAmount,
+                  price: item.price,
+                };
+                bag.push(currentItem);
+                setBag([...bag]);
+                console.log(bag);
+                navigate(`../bag`);
+              }}
+            >
+              Buy Now
+            </button>
             <button className={styles.cartBtn}>
               <Icon
                 path={mdiShoppingOutline}
