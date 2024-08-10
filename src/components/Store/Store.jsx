@@ -17,6 +17,7 @@ function Store() {
   function handleItemClick(item, itemTitle) {
     navigate(`../store/${itemTitle}`, { state: { data, item } });
   }
+
   return (
     <div className={styles.storeContainer}>
       <div className={styles.sideBar}>

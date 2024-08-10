@@ -4,9 +4,11 @@ import styles from "./Navbar.module.css";
 import Icon from "@mdi/react";
 import { mdiShoppingOutline, mdiMagnify } from "@mdi/js";
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 function Navbar({ data }) {
   const navigate = useNavigate();
+  const [bag, setBag] = useState([]);
   return (
     <div className={styles.Navbar}>
       <div className={styles.navbarLeft}>
@@ -41,6 +43,13 @@ function Navbar({ data }) {
         <div className={styles.Bag}>
           <Link to="bag">
             <Icon path={mdiShoppingOutline} size={1} />
+            <div
+              className={`${styles.bagCount} ${
+                bag.length > 0 ? styles.active : null
+              }`}
+            >
+              {bag.length}
+            </div>
           </Link>
         </div>
       </div>
