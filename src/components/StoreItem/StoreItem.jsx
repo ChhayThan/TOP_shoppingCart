@@ -14,7 +14,7 @@ function StoreItem() {
   return (
     <div className={styles.storeItemContainer}>
       <div className={styles.backLink}>
-        <Link to="../store" state={{ data }}>
+        <Link to="../store" state={{ data, searchFilter: "" }}>
           Back
         </Link>
       </div>

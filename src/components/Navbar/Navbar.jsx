@@ -1,10 +1,12 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import Icon from "@mdi/react";
 import { mdiShoppingOutline, mdiMagnify } from "@mdi/js";
 import PropTypes from "prop-types";
 
 function Navbar({ data }) {
+  const navigate = useNavigate();
   return (
     <div className={styles.Navbar}>
       <div className={styles.navbarLeft}>
@@ -15,7 +17,7 @@ function Navbar({ data }) {
           <Link to="home">Home</Link>
         </div>
         <div className={styles.navLink}>
-          <Link to="store" state={{ data }}>
+          <Link to="store" state={{ data, searchFilter: "" }}>
             Store
           </Link>
         </div>
@@ -28,6 +30,11 @@ function Navbar({ data }) {
             className={styles.searchBar}
             id="searchBar"
             placeholder="Search"
+            onChange={(e) => {
+              navigate(`/store`, {
+                state: { data, searchFilter: `${e.target.value}` },
+              });
+            }}
           />
         </div>
 

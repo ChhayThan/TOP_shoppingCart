@@ -12,7 +12,7 @@ function Store() {
   ];
   const [filter, setFilter] = useState([]);
   const location = useLocation();
-  const { data } = location.state;
+  const { data, searchFilter } = location.state;
   const navigate = useNavigate();
   function handleItemClick(item, itemTitle) {
     navigate(`../store/${itemTitle}`, { state: { data, item } });
@@ -57,24 +57,48 @@ function Store() {
         <div className={styles.itemContainer}>
           {data.map((object) => {
             if (filter.length === 0 || filter.includes(object.category)) {
-              return (
-                <div
-                  className={`${styles.item}`}
-                  key={object.id}
-                  onClick={() => handleItemClick(object, object.title)}
-                >
-                  <img
-                    src={object.image}
-                    alt={object.title}
-                    className={styles.itemImg}
-                  />
-                  <div className={styles.itemDescription}>
-                    <p className={styles.itemCategory}>{object.category}</p>
-                    <p className={styles.itemTitle}>{object.title}</p>
-                    <p className={styles.itemPrice}>{`$ ${object.price}`}</p>
+              if (
+                searchFilter != "" &&
+                object.title.toLowerCase().includes(searchFilter.toLowerCase())
+              ) {
+                return (
+                  <div
+                    className={`${styles.item}`}
+                    key={object.id}
+                    onClick={() => handleItemClick(object, object.title)}
+                  >
+                    <img
+                      src={object.image}
+                      alt={object.title}
+                      className={styles.itemImg}
+                    />
+                    <div className={styles.itemDescription}>
+                      <p className={styles.itemCategory}>{object.category}</p>
+                      <p className={styles.itemTitle}>{object.title}</p>
+                      <p className={styles.itemPrice}>{`$ ${object.price}`}</p>
+                    </div>
                   </div>
-                </div>
-              );
+                );
+              } else if (searchFilter === "") {
+                return (
+                  <div
+                    className={`${styles.item}`}
+                    key={object.id}
+                    onClick={() => handleItemClick(object, object.title)}
+                  >
+                    <img
+                      src={object.image}
+                      alt={object.title}
+                      className={styles.itemImg}
+                    />
+                    <div className={styles.itemDescription}>
+                      <p className={styles.itemCategory}>{object.category}</p>
+                      <p className={styles.itemTitle}>{object.title}</p>
+                      <p className={styles.itemPrice}>{`$ ${object.price}`}</p>
+                    </div>
+                  </div>
+                );
+              }
             }
           })}
         </div>

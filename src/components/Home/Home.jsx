@@ -18,7 +18,11 @@ function Home() {
         Discover our selection of fake products, random as they come. Delivered
         straight from nowhere to your thoughts.
       </p>
-      <Link to="../store" state={{ data }} className={styles.shopLink}>
+      <Link
+        to="../store"
+        state={{ data, searchFilter: "" }}
+        className={styles.shopLink}
+      >
         Shop Now
       </Link>
       <p className={styles.featuredItems}>Featured Items</p>
