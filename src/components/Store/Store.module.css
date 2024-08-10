@@ -53,10 +53,8 @@
 
 .itemTitle {
   width: 100%;
-  padding-top: 1em;
-  font-size: 0.5em;
+  font-size: 0.8em;
   font-weight: bold;
-  justify-self: end;
 }
 .categoryContainer {
   display: flex;
@@ -99,6 +97,25 @@
 .category.active .checkBox {
   background-color: black;
   border: 1px solid black;
+}
+
+.itemDescription {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.itemCategory {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.itemPrice {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 620px) {

@@ -1,0 +1,104 @@
+.storeItemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.backLink {
+  font-weight: bold;
+  font-size: 1em;
+  padding-left: 2em;
+}
+
+.itemImage {
+  width: 450px;
+  height: 450px;
+  object-fit: contain;
+
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+
+  margin: 1em;
+  padding: 1em;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+}
+.itemInfo {
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.itemTitle {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.itemCategory {
+  font-size: 1em;
+  color: gray;
+}
+
+.itemPrice {
+  font-weight: bold;
+  font-size: 1em;
+}
+.itemAmount {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.amountBtn {
+  border: 1px solid lightgray;
+  background-color: white;
+  color: lightgray;
+}
+.amountBtn:hover {
+  background-color: rgb(231, 231, 231);
+  transition: background-color 300ms ease;
+}
+
+.actionBtns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+.actionBtns button {
+  border: none;
+  border-radius: 5px;
+  padding: 1em;
+  max-width: 340px;
+  width: 100%;
+}
+
+button .Icon {
+  margin-right: 0.5em;
+}
+
+.buyBtn {
+  background-color: #3895ff;
+  color: white;
+  font-weight: bold;
+}
+.buyBtn:hover {
+  background-color: #1868c4;
+  transition: background-color 200ms ease;
+}
+
+.cartBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartBtn:hover {
+  background-color: lightgray;
+  transition: background-color 200ms ease;
+}

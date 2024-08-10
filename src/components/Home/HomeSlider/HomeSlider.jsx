@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import styles from "./HomeSlider.module.css";
 
 function HomeSlider({ data, handleItemClick }) {
-  const [itemArray, setItemArray] = useState(data);
+  const itemData = [...data];
+  const [itemArray, setItemArray] = useState(itemData);
   useEffect(() => {
     const key = setInterval(() => {
       const firstItem = itemArray.shift();

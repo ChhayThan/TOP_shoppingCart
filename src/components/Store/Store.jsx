@@ -15,7 +15,7 @@ function Store() {
   const { data } = location.state;
   const navigate = useNavigate();
   function handleItemClick(item, itemTitle) {
-    navigate(`../store/${itemTitle}`, { state: { item } });
+    navigate(`../store/${itemTitle}`, { state: { data, item } });
   }
   return (
     <div className={styles.storeContainer}>
@@ -68,7 +68,11 @@ function Store() {
                     alt={object.title}
                     className={styles.itemImg}
                   />
-                  <p className={styles.itemTitle}>{object.title}</p>
+                  <div className={styles.itemDescription}>
+                    <p className={styles.itemCategory}>{object.category}</p>
+                    <p className={styles.itemTitle}>{object.title}</p>
+                    <p className={styles.itemPrice}>{`$ ${object.price}`}</p>
+                  </div>
                 </div>
               );
             }
