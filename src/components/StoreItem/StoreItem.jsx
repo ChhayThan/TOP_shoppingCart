@@ -9,6 +9,7 @@ function StoreItem() {
   let location = useLocation();
   const { data, item } = location.state;
   const [itemAmount, setItemAmount] = useState(1);
+  const [price, setPrice] = useState(data.price);
 
   return (
     <div className={styles.storeItemContainer}>
@@ -22,7 +23,9 @@ function StoreItem() {
         <div className={styles.itemInfo}>
           <h1 className={styles.itemTitle}>{item.title}</h1>
           <h2 className={styles.itemCategory}>{item.category}</h2>
-          <h3 className={styles.itemPrice}>{`$ ${item.price * itemAmount}`}</h3>
+          <h3 className={styles.itemPrice}>{`$ ${
+            price ? price : item.price
+          }`}</h3>
           <div className={styles.itemAmount}>
             <button
               className={styles.amountBtn}
@@ -30,6 +33,7 @@ function StoreItem() {
                 if (itemAmount > 1) {
                   setItemAmount((itemAmount) => {
                     let newAmount = itemAmount - 1;
+                    setPrice((item.price * newAmount).toFixed(2));
                     return newAmount;
                   });
                 }
@@ -44,6 +48,7 @@ function StoreItem() {
                 if (itemAmount < 100) {
                   setItemAmount((itemAmount) => {
                     let newAmount = itemAmount + 1;
+                    setPrice((item.price * newAmount).toFixed(2));
                     return newAmount;
                   });
                 }

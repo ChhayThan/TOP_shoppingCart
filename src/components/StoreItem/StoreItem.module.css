@@ -10,8 +10,10 @@
 }
 
 .itemImage {
-  width: 450px;
-  height: 450px;
+  width: 100%;
+  height: 100%;
+  max-width: 450px;
+  max-height: 450px;
   object-fit: contain;
 
   border: 1px solid lightgrey;
@@ -26,7 +28,7 @@
   align-items: flex-start;
 }
 .itemInfo {
-  padding-top: 2em;
+  padding: 2em;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -90,6 +92,7 @@ button .Icon {
 .buyBtn:hover {
   background-color: #1868c4;
   transition: background-color 200ms ease;
+  cursor: pointer;
 }
 
 .cartBtn {
@@ -101,4 +104,18 @@ button .Icon {
 .cartBtn:hover {
   background-color: lightgray;
   transition: background-color 200ms ease;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 550px) {
+  .img {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .item {
+    flex-direction: column;
+    align-items: center;
+  }
 }
