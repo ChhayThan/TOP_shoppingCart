@@ -71,6 +71,7 @@ function StoreItem() {
                 let currentItem = {
                   id: item.id,
                   title: item.title,
+                  image: item.image,
                   category: item.category,
                   quantity: itemAmount,
                   price: item.price,
@@ -78,7 +79,7 @@ function StoreItem() {
                 bag.push(currentItem);
                 setBag([...bag]);
                 console.log(bag);
-                navigate(`../bag`);
+                navigate(`../bag`, { state: { data } });
               }}
             >
               Buy Now

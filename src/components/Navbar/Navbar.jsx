@@ -42,7 +42,7 @@ function Navbar({ data }) {
         </div>
 
         <div className={styles.Bag}>
-          <Link to="bag">
+          <Link to="bag" state={{ data }}>
             <Icon path={mdiShoppingOutline} size={1} />
             <div
               className={`${styles.bagCount} ${
