@@ -1,8 +1,17 @@
-# React + Vite
+#Eric's Fake Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## A project from the Odin project react course.
 
-Currently, two official plugins are available:
+## Made with react
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project has helped me sharpen my skills in various areas of web development.
+Here are some of the things I was able to use/do in this project:
+
+- React data fetching and API use (useEffect)
+- React routing (react-router + react-router-dom)
+- Using react APIs - Hooks (useState, Context)
+- Incorporated PropTypes
+- Incorporated Material Design Icons using their components for icons
+- Used CSS Modules to help with code organization
+
+React Context, states, useLocation, useNavigation and Links are some major topics that I was able to learn and use in this project. (had to do a lot of trail and error and messing around with the application architecture as well as managing react states :\ )

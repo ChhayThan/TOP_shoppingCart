@@ -104,6 +104,7 @@ function Bag() {
             className={styles.checkOutBtn}
             onClick={() => {
               alert("🎉Congrats on making a purchase🎉");
+              console.log(bag);
             }}
           >
             Checkout
