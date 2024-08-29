@@ -4,6 +4,8 @@
 
 ## Made with react
 
+![alt App preview](https://github.com/ChhayThan/TOP_shoppingCart/blob/main/public/images/app.png?raw=true)
+
 This project has helped me sharpen my skills in various areas of web development.
 Here are some of the things I was able to use/do in this project:
 
